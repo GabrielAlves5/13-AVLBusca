@@ -291,17 +291,12 @@ void buscarElementoArvore(NO* no, int valor) {
         cout << "ENCONTRADO";
         }
     else if (valor < no->valor) {
-        cout << "Numero menor que " << no->valor << endl;
-        _Thrd_sleep_for(1000);
-        cout << "Indo pela esquerda" << endl;
-        _Thrd_sleep_for(1000);
+        cout << "Numero menor que " << no->valor << ": Indo pela esquerda" << endl;
+      
         buscarElementoArvore(no->esq, valor);
     }
     else if (valor > no->valor) {
-        cout << "Numero Maior que " << no->valor << endl;
-        _Thrd_sleep_for(1000);
-        cout << "Indo pela direita" << endl;
-        _Thrd_sleep_for(1000);
+        cout << "Numero Maior que " << no->valor << ": Indo pela direita" << endl;
         buscarElementoArvore(no->dir, valor);
     }
 }
