@@ -107,6 +107,7 @@ void exibir() {
 }
 
 void buscar() {
+    
     int v;
     cout << "Digite o elemento: ";
     cin >> v;
@@ -280,8 +281,27 @@ void buscarElementoArvore(NO* no, int valor) {
        
        IMPLEMENTE ESTA FUNÇÃO DE FORMA RECURSIVA!
     */
-    
+
     // TODO: Implemente a busca recursiva aqui
     
-    cout << "Funcao de busca nao implementada!\n";
+    if (no == NULL) {
+        cout << "NAO ENCONTRADO";
+    }
+    else if (valor == no->valor) {
+        cout << "ENCONTRADO";
+        }
+    else if (valor < no->valor) {
+        cout << "Numero menor que " << no->valor << endl;
+        _Thrd_sleep_for(1000);
+        cout << "Indo pela esquerda" << endl;
+        _Thrd_sleep_for(1000);
+        buscarElementoArvore(no->esq, valor);
+    }
+    else if (valor > no->valor) {
+        cout << "Numero Maior que " << no->valor << endl;
+        _Thrd_sleep_for(1000);
+        cout << "Indo pela direita" << endl;
+        _Thrd_sleep_for(1000);
+        buscarElementoArvore(no->dir, valor);
+    }
 }
